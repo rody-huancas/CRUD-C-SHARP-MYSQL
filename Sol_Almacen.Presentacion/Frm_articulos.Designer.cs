@@ -67,6 +67,7 @@
             this.Dgv_articulos.RowTemplate.Height = 24;
             this.Dgv_articulos.Size = new System.Drawing.Size(658, 267);
             this.Dgv_articulos.TabIndex = 0;
+            this.Dgv_articulos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_articulos_CellClick);
             // 
             // label1
             // 
@@ -213,6 +214,7 @@
             this.Btn_actualizar.TabIndex = 16;
             this.Btn_actualizar.Text = "Actualizar";
             this.Btn_actualizar.UseVisualStyleBackColor = true;
+            this.Btn_actualizar.Click += new System.EventHandler(this.Btn_actualizar_Click);
             // 
             // Btn_eliminar
             // 
@@ -222,6 +224,7 @@
             this.Btn_eliminar.TabIndex = 17;
             this.Btn_eliminar.Text = "Eliminar";
             this.Btn_eliminar.UseVisualStyleBackColor = true;
+            this.Btn_eliminar.Click += new System.EventHandler(this.Btn_eliminar_Click);
             // 
             // Btn_reporte
             // 

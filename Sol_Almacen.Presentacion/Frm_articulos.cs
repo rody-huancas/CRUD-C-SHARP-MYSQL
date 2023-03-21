@@ -95,6 +95,29 @@ namespace Sol_Almacen.Presentacion
             Txt_descripcion_ca.Text = "";
             Txt_stock_actual.Text = "";
         }
+
+        private void Selecciona_item()
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(Dgv_articulos.CurrentRow.Cells["codigo_ar"].Value)))
+            {
+                MessageBox.Show("Selecciona un registro",
+                                "Aviso del sistema",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                this.nCodigo_ar = Convert.ToInt32(Dgv_articulos.CurrentRow.Cells["codigo_ar"].Value);
+                Txt_descripcion_ar.Text = Convert.ToString(Dgv_articulos.CurrentRow.Cells["descripcion_ar"].Value);
+                Txt_marca_ar.Text = Convert.ToString(Dgv_articulos.CurrentRow.Cells["marca_ar"].Value);
+                Txt_descripcion_um.Text = Convert.ToString(Dgv_articulos.CurrentRow.Cells["descripcion_um"].Value);
+                Txt_descripcion_ca.Text = Convert.ToString(Dgv_articulos.CurrentRow.Cells["descripcion_ca"].Value);
+                Txt_stock_actual.Text = Convert.ToString(Dgv_articulos.CurrentRow.Cells["stock_actual"].Value);
+
+
+            }
+        }
+
         #endregion
 
         private void Frm_articulos_Load(object sender, EventArgs e)
@@ -125,6 +148,8 @@ namespace Sol_Almacen.Presentacion
 
         private void Btn_cancelar_Click(object sender, EventArgs e)
         {
+            nCodigo_ar = 0;
+            nEstadoGuarda = 0;
             this.Limpia_texto();
             this.Estado_texto(false);
             this.Estado_botones_proceso(false);
@@ -154,13 +179,57 @@ namespace Sol_Almacen.Presentacion
                 this.Estado_botones_proceso(false);
                 this.Estado_botones_principales(true);
                 this.Listado_ar("%");
+                nCodigo_ar = 0;
+                nEstadoGuarda = 0;
+
                 MessageBox.Show("Los datos han sido guardados correctamente.",
-                                "Confirmación", MessageBoxButtons.OK, 
+                                "Confirmación", MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
             }
             else
             {
                 MessageBox.Show(Rpta, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Btn_actualizar_Click(object sender, EventArgs e)
+        {
+            nEstadoGuarda = 2; //Actualizar registro
+            this.Estado_texto(true);
+            this.Estado_botones_proceso(true);
+            this.Estado_botones_principales(false);
+            Txt_descripcion_ar.Focus();
+        }
+
+        private void Dgv_articulos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Selecciona_item();
+        }
+
+        private void Btn_eliminar_Click(object sender, EventArgs e)
+        {
+            if (nCodigo_ar > 0)
+            {
+                string Rpta = "";
+                D_Articulos Datos = new D_Articulos();
+                Rpta = Datos.Eliminar_ar(nCodigo_ar);
+                if (Rpta.Equals("OK"))
+                {
+                    this.Limpia_texto();
+                    this.Listado_ar("%");
+                    nCodigo_ar = 0;
+                    MessageBox.Show("Registro eliminado correctamente",
+                                    "Confirmación",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se tiene seleccionado ningún registro.",
+                                    "Aviso del sistema",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Exclamation);
             }
         }
     }

@@ -31,6 +31,7 @@ namespace Sol_Almacen.Presentacion
                                     " INNER JOIN tb_unidades_medida b ON a.codigo_um=b.codigo_um" +
                                     " INNER JOIN tb_categorias c ON a.codigo_ca=c.codigo_ca" +
                                     " WHERE a.descripcion_ar LIKE '" + cTexto + "' " +
+                                    " AND a.estado=1" +
                                     " ORDER BY a.codigo_ar";
                 MySqlCommand Comando = new MySqlCommand(sql_tarea, SqlCon);
                 Comando.CommandTimeout = 60;
@@ -66,18 +67,25 @@ namespace Sol_Almacen.Presentacion
                                                         " codigo_ca," +
                                                         " stock_actual," +
                                                         " fecha_crea," +
-                                                        " fecha_modifica)" +
+                                                        " fecha_modifica," +
+                                                        " estado)" +
                                                         " VALUES('" + oAr.Descripcion_ar + "'," +
                                                         "'" + oAr.Marca_ar + "'," +
                                                         "'" + oAr.Codigo_um + "'," +
                                                         "'" + oAr.Codigo_ca + "'," +
                                                         "'" + oAr.Stock_actual + "'," +
                                                         "'" + oAr.Fecha_crea + "'," +
-                                                        "'" + oAr.Fecha_modifica + "')";
+                                                        "'" + oAr.Fecha_modifica + "', 1)";
                 }
                 else // Actualizar registro
                 {
-
+                    SqlTarea = "UPDATE tb_articulos set descripcion_ar='" + oAr.Descripcion_ar + "', " +
+                                                        " marca_ar='" + oAr.Marca_ar + "'," +
+                                                        " codigo_um='" + oAr.Codigo_um + "'," +
+                                                        " codigo_ca='" + oAr.Codigo_ca + "'," +
+                                                        " stock_actual='" + oAr.Stock_actual + "'," +
+                                                        " fecha_modifica='" + oAr.Fecha_modifica + "'" +
+                                                        " WHERE codigo_ar='" + oAr.Codigo_ar + "'";
                 }
                 MySqlCommand Comando = new MySqlCommand(SqlTarea, SqlCon);
                 SqlCon.Open();
@@ -94,5 +102,33 @@ namespace Sol_Almacen.Presentacion
 
             return Rpta;
         }
+
+        public string Eliminar_ar(int nCodigo_ar)
+        {
+            string Rpta = "";
+            string SqlTarea = "";
+            MySqlConnection SqlCon = new MySqlConnection();
+            try
+            {
+                SqlCon = Conexion.getInstacia().CrearConexion();
+                //SqlTarea = "DELETE FROM tb_articulos WHERE codigo_ar='" + nCodigo_ar + "'";
+                SqlTarea = "UPDATE tb_articulos SET estado=0 WHERE codigo_ar='" + nCodigo_ar + "'";
+
+                MySqlCommand Comando = new MySqlCommand(SqlTarea, SqlCon);
+                SqlCon.Open();
+                Rpta = Comando.ExecuteNonQuery() >= 1 ? "OK" : "No se pudo eliminar el registro.";
+            }
+            catch (Exception ex)
+            {
+                Rpta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+
+            return Rpta;
+        }
+
     }
 }
