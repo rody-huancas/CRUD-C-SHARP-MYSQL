@@ -131,5 +131,37 @@ namespace Sol_Almacen.Presentacion
             this.Estado_botones_principales(true);
             Txt_buscar.Focus();
         }
+
+        private void Btn_guardar_Click(object sender, EventArgs e)
+        {
+            string Rpta = "";
+            P_Articulos oAr = new P_Articulos();
+            oAr.Codigo_ar = nCodigo_ar;
+            oAr.Descripcion_ar = Txt_descripcion_ar.Text.Trim();
+            oAr.Marca_ar = Txt_marca_ar.Text.Trim();
+            oAr.Codigo_um = 1;
+            oAr.Codigo_ca = 1;
+            oAr.Stock_actual = Convert.ToDecimal(Txt_stock_actual.Text);
+            oAr.Fecha_crea = DateTime.Now.ToString("yyyyy-MM-dd");
+            oAr.Fecha_modifica = DateTime.Now.ToString("yyyyy-MM-dd");
+
+            D_Articulos Datos = new D_Articulos();
+            Rpta = Datos.Guardar_ar(nEstadoGuarda, oAr);
+
+            if (Rpta.Equals("OK"))
+            {
+                this.Estado_texto(false);
+                this.Estado_botones_proceso(false);
+                this.Estado_botones_principales(true);
+                this.Listado_ar("%");
+                MessageBox.Show("Los datos han sido guardados correctamente.",
+                                "Confirmación", MessageBoxButtons.OK, 
+                                MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(Rpta, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

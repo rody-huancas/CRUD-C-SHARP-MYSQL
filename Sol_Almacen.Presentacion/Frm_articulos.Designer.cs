@@ -62,6 +62,7 @@
             this.Dgv_articulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_articulos.Location = new System.Drawing.Point(464, 72);
             this.Dgv_articulos.Name = "Dgv_articulos";
+            this.Dgv_articulos.ReadOnly = true;
             this.Dgv_articulos.RowHeadersWidth = 51;
             this.Dgv_articulos.RowTemplate.Height = 24;
             this.Dgv_articulos.Size = new System.Drawing.Size(658, 267);
@@ -181,6 +182,7 @@
             this.Btn_guardar.Text = "Guardar";
             this.Btn_guardar.UseVisualStyleBackColor = true;
             this.Btn_guardar.Visible = false;
+            this.Btn_guardar.Click += new System.EventHandler(this.Btn_guardar_Click);
             // 
             // Btn_cancelar
             // 

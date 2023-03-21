@@ -50,20 +50,38 @@ namespace Sol_Almacen.Presentacion
             }
         }
 
-        public string Guardar_ar(int nOpcion,P_Articulos oAr)
+        public string Guardar_ar(int nOpcion, P_Articulos oAr)
         {
             string Rpta = "";
+            string SqlTarea = "";
             MySqlConnection SqlCon = new MySqlConnection();
             try
             {
-                if (nOpcion==1) // Nuevo registro
+                SqlCon = Conexion.getInstacia().CrearConexion();
+                if (nOpcion == 1) // Nuevo registro
                 {
-
+                    SqlTarea = "INSERT INTO tb_articulos(descripcion_ar, " +
+                                                        " marca_ar," +
+                                                        " codigo_um," +
+                                                        " codigo_ca," +
+                                                        " stock_actual," +
+                                                        " fecha_crea," +
+                                                        " fecha_modifica)" +
+                                                        " VALUES('" + oAr.Descripcion_ar + "'," +
+                                                        "'" + oAr.Marca_ar + "'," +
+                                                        "'" + oAr.Codigo_um + "'," +
+                                                        "'" + oAr.Codigo_ca + "'," +
+                                                        "'" + oAr.Stock_actual + "'," +
+                                                        "'" + oAr.Fecha_crea + "'," +
+                                                        "'" + oAr.Fecha_modifica + "')";
                 }
                 else // Actualizar registro
                 {
 
                 }
+                MySqlCommand Comando = new MySqlCommand(SqlTarea, SqlCon);
+                SqlCon.Open();
+                Rpta = Comando.ExecuteNonQuery() >= 1 ? "OK" : "No se pudo ingresar el registro.";
             }
             catch (Exception ex)
             {
