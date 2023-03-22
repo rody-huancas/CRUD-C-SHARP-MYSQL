@@ -232,5 +232,16 @@ namespace Sol_Almacen.Presentacion
                                     MessageBoxIcon.Exclamation);
             }
         }
+
+        private void Btn_salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Btn_reporte_Click(object sender, EventArgs e)
+        {
+            Frm_Rpt_Articulos oRpt = new Frm_Rpt_Articulos();
+            oRpt.ShowDialog();
+        }
     }
 }

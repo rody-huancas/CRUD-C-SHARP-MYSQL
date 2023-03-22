@@ -234,6 +234,7 @@
             this.Btn_reporte.TabIndex = 18;
             this.Btn_reporte.Text = "Reporte";
             this.Btn_reporte.UseVisualStyleBackColor = true;
+            this.Btn_reporte.Click += new System.EventHandler(this.Btn_reporte_Click);
             // 
             // Btn_salir
             // 
@@ -243,6 +244,7 @@
             this.Btn_salir.TabIndex = 19;
             this.Btn_salir.Text = "Salir";
             this.Btn_salir.UseVisualStyleBackColor = true;
+            this.Btn_salir.Click += new System.EventHandler(this.Btn_salir_Click);
             // 
             // Btn_buscar
             // 
