@@ -174,7 +174,7 @@ namespace Sol_Almacen.Presentacion
 
         private void MDI_Principal_Load(object sender, EventArgs e)
         {
-            foreach (Control control in this.Controls)
+            /*foreach (Control control in this.Controls)
             {
                 MdiClient mdiClient = control as MdiClient;
                 if (mdiClient != null)
@@ -187,20 +187,20 @@ namespace Sol_Almacen.Presentacion
             timerHora.Interval = 1000;
             timerHora.Enabled = true;
 
-            Lb_Fecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            Lb_Fecha.Text = DateTime.Now.ToString("dd/MM/yyyy");*/
         }
 
         private void timerHora_Tick(object sender, EventArgs e)
         {
-            Lb_Hora.Text = DateTime.Now.ToString("hh:mm:ss tt");
+            //Lb_Hora.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
 
         private void MDI_Principal_Resize(object sender, EventArgs e)
         {
-            int x = (this.ClientSize.Width - Lb_Hora.Width) / 2;
+            /*int x = (this.ClientSize.Width - Lb_Hora.Width) / 2;
             int y = (this.ClientSize.Height - Lb_Hora.Height - Lb_Fecha.Height) / 2;
             Lb_Hora.Location = new Point(x, y); 
-            Lb_Fecha.Location = new Point(x, y + Lb_Hora.Height);
+            Lb_Fecha.Location = new Point(x, y + Lb_Hora.Height);*/
         }
     }
 }
