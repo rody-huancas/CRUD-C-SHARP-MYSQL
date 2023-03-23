@@ -64,6 +64,7 @@
             this.Pnl_ca = new System.Windows.Forms.Panel();
             this.Btn_retornar_ca = new System.Windows.Forms.Button();
             this.Dgv_ca = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_articulos)).BeginInit();
             this.Pnl_um.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_um)).BeginInit();
@@ -82,7 +83,7 @@
             this.Dgv_articulos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.Dgv_articulos.ColumnHeadersHeight = 35;
             this.Dgv_articulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.Dgv_articulos.Location = new System.Drawing.Point(464, 72);
+            this.Dgv_articulos.Location = new System.Drawing.Point(472, 142);
             this.Dgv_articulos.Name = "Dgv_articulos";
             this.Dgv_articulos.ReadOnly = true;
             this.Dgv_articulos.RowHeadersWidth = 51;
@@ -94,7 +95,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 72);
+            this.label1.Location = new System.Drawing.Point(26, 142);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 16);
             this.label1.TabIndex = 1;
@@ -102,7 +103,7 @@
             // 
             // Txt_descripcion_ar
             // 
-            this.Txt_descripcion_ar.Location = new System.Drawing.Point(90, 72);
+            this.Txt_descripcion_ar.Location = new System.Drawing.Point(98, 142);
             this.Txt_descripcion_ar.Name = "Txt_descripcion_ar";
             this.Txt_descripcion_ar.ReadOnly = true;
             this.Txt_descripcion_ar.Size = new System.Drawing.Size(323, 22);
@@ -110,7 +111,7 @@
             // 
             // Txt_marca_ar
             // 
-            this.Txt_marca_ar.Location = new System.Drawing.Point(90, 119);
+            this.Txt_marca_ar.Location = new System.Drawing.Point(98, 189);
             this.Txt_marca_ar.Name = "Txt_marca_ar";
             this.Txt_marca_ar.ReadOnly = true;
             this.Txt_marca_ar.Size = new System.Drawing.Size(323, 22);
@@ -119,7 +120,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 119);
+            this.label2.Location = new System.Drawing.Point(26, 189);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 16);
             this.label2.TabIndex = 3;
@@ -127,7 +128,7 @@
             // 
             // Txt_descripcion_um
             // 
-            this.Txt_descripcion_um.Location = new System.Drawing.Point(90, 165);
+            this.Txt_descripcion_um.Location = new System.Drawing.Point(98, 235);
             this.Txt_descripcion_um.Name = "Txt_descripcion_um";
             this.Txt_descripcion_um.ReadOnly = true;
             this.Txt_descripcion_um.Size = new System.Drawing.Size(273, 22);
@@ -136,7 +137,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 165);
+            this.label3.Location = new System.Drawing.Point(26, 235);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 16);
             this.label3.TabIndex = 5;
@@ -153,7 +154,7 @@
             this.Btn_lupa_um.ForeColor = System.Drawing.Color.White;
             this.Btn_lupa_um.ImageKey = "lupa.png";
             this.Btn_lupa_um.ImageList = this.imageList2;
-            this.Btn_lupa_um.Location = new System.Drawing.Point(370, 165);
+            this.Btn_lupa_um.Location = new System.Drawing.Point(378, 235);
             this.Btn_lupa_um.Name = "Btn_lupa_um";
             this.Btn_lupa_um.Size = new System.Drawing.Size(43, 23);
             this.Btn_lupa_um.TabIndex = 7;
@@ -177,7 +178,7 @@
             this.Btn_lupa_ca.ForeColor = System.Drawing.Color.White;
             this.Btn_lupa_ca.ImageKey = "lupa.png";
             this.Btn_lupa_ca.ImageList = this.imageList2;
-            this.Btn_lupa_ca.Location = new System.Drawing.Point(370, 209);
+            this.Btn_lupa_ca.Location = new System.Drawing.Point(378, 279);
             this.Btn_lupa_ca.Name = "Btn_lupa_ca";
             this.Btn_lupa_ca.Size = new System.Drawing.Size(43, 23);
             this.Btn_lupa_ca.TabIndex = 10;
@@ -186,7 +187,7 @@
             // 
             // Txt_descripcion_ca
             // 
-            this.Txt_descripcion_ca.Location = new System.Drawing.Point(90, 209);
+            this.Txt_descripcion_ca.Location = new System.Drawing.Point(98, 279);
             this.Txt_descripcion_ca.Name = "Txt_descripcion_ca";
             this.Txt_descripcion_ca.ReadOnly = true;
             this.Txt_descripcion_ca.Size = new System.Drawing.Size(273, 22);
@@ -195,7 +196,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 209);
+            this.label4.Location = new System.Drawing.Point(26, 279);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 16);
             this.label4.TabIndex = 8;
@@ -203,7 +204,7 @@
             // 
             // Txt_stock_actual
             // 
-            this.Txt_stock_actual.Location = new System.Drawing.Point(90, 256);
+            this.Txt_stock_actual.Location = new System.Drawing.Point(98, 326);
             this.Txt_stock_actual.Name = "Txt_stock_actual";
             this.Txt_stock_actual.ReadOnly = true;
             this.Txt_stock_actual.Size = new System.Drawing.Size(323, 22);
@@ -212,7 +213,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 256);
+            this.label5.Location = new System.Drawing.Point(26, 326);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 16);
             this.label5.TabIndex = 11;
@@ -225,7 +226,7 @@
             this.Btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_guardar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_guardar.ForeColor = System.Drawing.Color.White;
-            this.Btn_guardar.Location = new System.Drawing.Point(90, 302);
+            this.Btn_guardar.Location = new System.Drawing.Point(98, 372);
             this.Btn_guardar.Name = "Btn_guardar";
             this.Btn_guardar.Size = new System.Drawing.Size(153, 37);
             this.Btn_guardar.TabIndex = 13;
@@ -241,7 +242,7 @@
             this.Btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_cancelar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_cancelar.ForeColor = System.Drawing.Color.White;
-            this.Btn_cancelar.Location = new System.Drawing.Point(260, 303);
+            this.Btn_cancelar.Location = new System.Drawing.Point(268, 373);
             this.Btn_cancelar.Name = "Btn_cancelar";
             this.Btn_cancelar.Size = new System.Drawing.Size(153, 37);
             this.Btn_cancelar.TabIndex = 14;
@@ -260,7 +261,7 @@
             this.Btn_nuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(78)))), ((int)(((byte)(112)))));
             this.Btn_nuevo.ImageKey = "nuevo.png";
             this.Btn_nuevo.ImageList = this.imageList1;
-            this.Btn_nuevo.Location = new System.Drawing.Point(181, 369);
+            this.Btn_nuevo.Location = new System.Drawing.Point(189, 439);
             this.Btn_nuevo.Name = "Btn_nuevo";
             this.Btn_nuevo.Size = new System.Drawing.Size(119, 104);
             this.Btn_nuevo.TabIndex = 15;
@@ -290,7 +291,7 @@
             this.Btn_actualizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(78)))), ((int)(((byte)(112)))));
             this.Btn_actualizar.ImageKey = "editar.png";
             this.Btn_actualizar.ImageList = this.imageList1;
-            this.Btn_actualizar.Location = new System.Drawing.Point(335, 369);
+            this.Btn_actualizar.Location = new System.Drawing.Point(343, 439);
             this.Btn_actualizar.Name = "Btn_actualizar";
             this.Btn_actualizar.Size = new System.Drawing.Size(119, 104);
             this.Btn_actualizar.TabIndex = 16;
@@ -310,7 +311,7 @@
             this.Btn_eliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(78)))), ((int)(((byte)(112)))));
             this.Btn_eliminar.ImageKey = "eliminar.png";
             this.Btn_eliminar.ImageList = this.imageList1;
-            this.Btn_eliminar.Location = new System.Drawing.Point(492, 369);
+            this.Btn_eliminar.Location = new System.Drawing.Point(500, 439);
             this.Btn_eliminar.Name = "Btn_eliminar";
             this.Btn_eliminar.Size = new System.Drawing.Size(119, 104);
             this.Btn_eliminar.TabIndex = 17;
@@ -330,7 +331,7 @@
             this.Btn_reporte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(78)))), ((int)(((byte)(112)))));
             this.Btn_reporte.ImageKey = "reporte.png";
             this.Btn_reporte.ImageList = this.imageList1;
-            this.Btn_reporte.Location = new System.Drawing.Point(652, 369);
+            this.Btn_reporte.Location = new System.Drawing.Point(660, 439);
             this.Btn_reporte.Name = "Btn_reporte";
             this.Btn_reporte.Size = new System.Drawing.Size(119, 104);
             this.Btn_reporte.TabIndex = 18;
@@ -350,7 +351,7 @@
             this.Btn_salir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(78)))), ((int)(((byte)(112)))));
             this.Btn_salir.ImageKey = "salir.png";
             this.Btn_salir.ImageList = this.imageList1;
-            this.Btn_salir.Location = new System.Drawing.Point(820, 369);
+            this.Btn_salir.Location = new System.Drawing.Point(828, 439);
             this.Btn_salir.Name = "Btn_salir";
             this.Btn_salir.Size = new System.Drawing.Size(119, 104);
             this.Btn_salir.TabIndex = 19;
@@ -370,7 +371,7 @@
             this.Btn_buscar.ForeColor = System.Drawing.Color.White;
             this.Btn_buscar.ImageKey = "lupa.png";
             this.Btn_buscar.ImageList = this.imageList2;
-            this.Btn_buscar.Location = new System.Drawing.Point(815, 44);
+            this.Btn_buscar.Location = new System.Drawing.Point(823, 114);
             this.Btn_buscar.Name = "Btn_buscar";
             this.Btn_buscar.Size = new System.Drawing.Size(40, 23);
             this.Btn_buscar.TabIndex = 22;
@@ -379,7 +380,7 @@
             // 
             // Txt_buscar
             // 
-            this.Txt_buscar.Location = new System.Drawing.Point(535, 44);
+            this.Txt_buscar.Location = new System.Drawing.Point(543, 114);
             this.Txt_buscar.Name = "Txt_buscar";
             this.Txt_buscar.Size = new System.Drawing.Size(273, 22);
             this.Txt_buscar.TabIndex = 21;
@@ -388,7 +389,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(463, 44);
+            this.label6.Location = new System.Drawing.Point(471, 114);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 16);
             this.label6.TabIndex = 20;
@@ -399,7 +400,7 @@
             this.Pnl_um.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Pnl_um.Controls.Add(this.Btn_retornar_um);
             this.Pnl_um.Controls.Add(this.Dgv_um);
-            this.Pnl_um.Location = new System.Drawing.Point(289, 72);
+            this.Pnl_um.Location = new System.Drawing.Point(297, 79);
             this.Pnl_um.Name = "Pnl_um";
             this.Pnl_um.Size = new System.Drawing.Size(299, 216);
             this.Pnl_um.TabIndex = 23;
@@ -445,7 +446,7 @@
             this.Pnl_ca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Pnl_ca.Controls.Add(this.Btn_retornar_ca);
             this.Pnl_ca.Controls.Add(this.Dgv_ca);
-            this.Pnl_ca.Location = new System.Drawing.Point(612, 72);
+            this.Pnl_ca.Location = new System.Drawing.Point(602, 79);
             this.Pnl_ca.Name = "Pnl_ca";
             this.Pnl_ca.Size = new System.Drawing.Size(299, 216);
             this.Pnl_ca.TabIndex = 24;
@@ -486,12 +487,23 @@
             this.Dgv_ca.TabIndex = 1;
             this.Dgv_ca.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_ca_CellDoubleClick);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Sitka Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(506, 9);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(192, 43);
+            this.label7.TabIndex = 45;
+            this.label7.Text = "ARTÍCULOS";
+            // 
             // Frm_articulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1143, 485);
+            this.ClientSize = new System.Drawing.Size(1147, 566);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.Pnl_ca);
             this.Controls.Add(this.Pnl_um);
             this.Controls.Add(this.Btn_buscar);
@@ -565,5 +577,6 @@
         private System.Windows.Forms.Panel Pnl_ca;
         private System.Windows.Forms.Button Btn_retornar_ca;
         private System.Windows.Forms.DataGridView Dgv_ca;
+        private System.Windows.Forms.Label label7;
     }
 }

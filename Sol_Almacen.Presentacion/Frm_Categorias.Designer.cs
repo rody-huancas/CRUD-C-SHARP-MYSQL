@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Categorias));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Categorias));
             this.Txt_descripcion_ca = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.Txt_buscar = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.Dgv_categorias = new System.Windows.Forms.DataGridView();
@@ -44,6 +43,7 @@
             this.Btn_nuevo = new System.Windows.Forms.Button();
             this.Btn_cancelar = new System.Windows.Forms.Button();
             this.Btn_guardar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_categorias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,12 +63,6 @@
             this.label1.Size = new System.Drawing.Size(66, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "Categoría";
-            // 
-            // imageList2
-            // 
-            this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
-            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList2.Images.SetKeyName(0, "lupa.png");
             // 
             // Txt_buscar
             // 
@@ -228,12 +222,23 @@
             this.Btn_guardar.Visible = false;
             this.Btn_guardar.Click += new System.EventHandler(this.Btn_guardar_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Sitka Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(316, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(212, 43);
+            this.label2.TabIndex = 45;
+            this.label2.Text = "CATEGORÍAS";
+            // 
             // Frm_Categorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(841, 464);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.Btn_cancelar);
             this.Controls.Add(this.Btn_guardar);
             this.Controls.Add(this.Btn_salir);
@@ -266,9 +271,9 @@
         private System.Windows.Forms.Button Btn_eliminar;
         private System.Windows.Forms.Button Btn_actualizar;
         private System.Windows.Forms.Button Btn_nuevo;
-        private System.Windows.Forms.ImageList imageList2;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button Btn_cancelar;
         private System.Windows.Forms.Button Btn_guardar;
+        private System.Windows.Forms.Label label2;
     }
 }

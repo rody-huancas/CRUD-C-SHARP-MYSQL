@@ -36,10 +36,14 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.Menu_Categorias = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_Medida = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menu_Salir = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.Lb_Hora = new System.Windows.Forms.Label();
+            this.Lb_Fecha = new System.Windows.Forms.Label();
+            this.timerHora = new System.Windows.Forms.Timer(this.components);
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -48,10 +52,11 @@
             // 
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dATOSMAESTROToolStripMenuItem});
+            this.dATOSMAESTROToolStripMenuItem,
+            this.Menu_Salir});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1150, 28);
+            this.menuStrip.Size = new System.Drawing.Size(1150, 30);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -64,40 +69,49 @@
             this.Menu_Medida});
             this.dATOSMAESTROToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("dATOSMAESTROToolStripMenuItem.Image")));
             this.dATOSMAESTROToolStripMenuItem.Name = "dATOSMAESTROToolStripMenuItem";
-            this.dATOSMAESTROToolStripMenuItem.Size = new System.Drawing.Size(160, 24);
+            this.dATOSMAESTROToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
             this.dATOSMAESTROToolStripMenuItem.Text = "DATOS MAESTRO";
             // 
             // Menu_Articulos
             // 
             this.Menu_Articulos.Name = "Menu_Articulos";
-            this.Menu_Articulos.Size = new System.Drawing.Size(224, 26);
+            this.Menu_Articulos.Size = new System.Drawing.Size(218, 26);
             this.Menu_Articulos.Text = "Artículos";
             this.Menu_Articulos.Click += new System.EventHandler(this.Menu_Articulos_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(215, 6);
             // 
             // Menu_Categorias
             // 
             this.Menu_Categorias.Name = "Menu_Categorias";
-            this.Menu_Categorias.Size = new System.Drawing.Size(224, 26);
+            this.Menu_Categorias.Size = new System.Drawing.Size(218, 26);
             this.Menu_Categorias.Text = "Categorías";
             this.Menu_Categorias.Click += new System.EventHandler(this.Menu_Categorias_Click);
             // 
             // Menu_Medida
             // 
             this.Menu_Medida.Name = "Menu_Medida";
-            this.Menu_Medida.Size = new System.Drawing.Size(224, 26);
+            this.Menu_Medida.Size = new System.Drawing.Size(218, 26);
             this.Menu_Medida.Text = "Unidad De Medida";
+            this.Menu_Medida.Click += new System.EventHandler(this.Menu_Medida_Click);
+            // 
+            // Menu_Salir
+            // 
+            this.Menu_Salir.Image = ((System.Drawing.Image)(resources.GetObject("Menu_Salir.Image")));
+            this.Menu_Salir.Name = "Menu_Salir";
+            this.Menu_Salir.Size = new System.Drawing.Size(81, 26);
+            this.Menu_Salir.Text = "SALIR";
+            this.Menu_Salir.Click += new System.EventHandler(this.Menu_Salir_Click);
             // 
             // toolStrip
             // 
             this.toolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip.Location = new System.Drawing.Point(0, 28);
+            this.toolStrip.Location = new System.Drawing.Point(0, 30);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(1150, 25);
+            this.toolStrip.Size = new System.Drawing.Size(1150, 31);
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "ToolStrip";
             // 
@@ -119,11 +133,42 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(54, 20);
             this.toolStripStatusLabel.Text = "Estado";
             // 
+            // Lb_Hora
+            // 
+            this.Lb_Hora.AutoSize = true;
+            this.Lb_Hora.BackColor = System.Drawing.Color.White;
+            this.Lb_Hora.Font = new System.Drawing.Font("Bahnschrift", 100F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lb_Hora.ForeColor = System.Drawing.Color.Black;
+            this.Lb_Hora.Location = new System.Drawing.Point(105, 154);
+            this.Lb_Hora.Name = "Lb_Hora";
+            this.Lb_Hora.Size = new System.Drawing.Size(0, 200);
+            this.Lb_Hora.TabIndex = 4;
+            this.Lb_Hora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Lb_Fecha
+            // 
+            this.Lb_Fecha.AutoSize = true;
+            this.Lb_Fecha.BackColor = System.Drawing.Color.White;
+            this.Lb_Fecha.Font = new System.Drawing.Font("Bahnschrift", 70F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lb_Fecha.ForeColor = System.Drawing.Color.Black;
+            this.Lb_Fecha.Location = new System.Drawing.Point(266, 365);
+            this.Lb_Fecha.Name = "Lb_Fecha";
+            this.Lb_Fecha.Size = new System.Drawing.Size(0, 140);
+            this.Lb_Fecha.TabIndex = 5;
+            this.Lb_Fecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // timerHora
+            // 
+            this.timerHora.Tick += new System.EventHandler(this.timerHora_Tick);
+            // 
             // MDI_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1150, 646);
+            this.Controls.Add(this.Lb_Fecha);
+            this.Controls.Add(this.Lb_Hora);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip);
@@ -132,7 +177,8 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MDI_Principal";
             this.Text = "CRUD";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MDI_Principal_Load);
+            this.Resize += new System.EventHandler(this.MDI_Principal_Resize);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
@@ -154,6 +200,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem Menu_Categorias;
         private System.Windows.Forms.ToolStripMenuItem Menu_Medida;
+        private System.Windows.Forms.ToolStripMenuItem Menu_Salir;
+        private System.Windows.Forms.Label Lb_Hora;
+        private System.Windows.Forms.Label Lb_Fecha;
+        private System.Windows.Forms.Timer timerHora;
     }
 }
 

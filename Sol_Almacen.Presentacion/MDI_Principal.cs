@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Sol_Almacen.Presentacion
         //Instanciar forms
         Frm_articulos Frm_ar;
         Frm_Categorias Frm_ca;
-        Frm_Unidad_Medida Frm_md;
+        Frm_Unidad_Medida Frm_um;
 
         public MDI_Principal()
         {
@@ -144,6 +145,62 @@ namespace Sol_Almacen.Presentacion
         void Alta_Frm_ca(object sender, EventArgs e)
         {
             Frm_ca = null;
+        }
+
+        private void Menu_Medida_Click(object sender, EventArgs e)
+        {
+            if (Frm_um == null)
+            {
+                Frm_um = new Frm_Unidad_Medida();
+                Frm_um.MdiParent = this;
+                Frm_um.FormClosed += new FormClosedEventHandler(Alta_Frm_um);
+                Frm_um.Show();
+            }
+            else
+            {
+                Frm_um.Activate();
+            }
+        }
+
+        void Alta_Frm_um(object sender, EventArgs e)
+        {
+            Frm_um = null;
+        }
+
+        private void Menu_Salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MDI_Principal_Load(object sender, EventArgs e)
+        {
+            foreach (Control control in this.Controls)
+            {
+                MdiClient mdiClient = control as MdiClient;
+                if (mdiClient != null)
+                {
+                    mdiClient.BackColor = Color.FromArgb(255, 255, 255); // color blanco
+                    break;
+                }
+            }
+
+            timerHora.Interval = 1000;
+            timerHora.Enabled = true;
+
+            Lb_Fecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
+        }
+
+        private void timerHora_Tick(object sender, EventArgs e)
+        {
+            Lb_Hora.Text = DateTime.Now.ToString("hh:mm:ss tt");
+        }
+
+        private void MDI_Principal_Resize(object sender, EventArgs e)
+        {
+            int x = (this.ClientSize.Width - Lb_Hora.Width) / 2;
+            int y = (this.ClientSize.Height - Lb_Hora.Height - Lb_Fecha.Height) / 2;
+            Lb_Hora.Location = new Point(x, y); 
+            Lb_Fecha.Location = new Point(x, y + Lb_Hora.Height);
         }
     }
 }

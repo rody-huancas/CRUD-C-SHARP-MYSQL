@@ -76,3 +76,4 @@ C:\Users\Rody\Desktop\Proyectos para github\C#\Sol_Almacen\Sol_Almacen.Presentac
 C:\Users\Rody\Desktop\Proyectos para github\C#\Sol_Almacen\Sol_Almacen.Presentacion\obj\Debug\Sol_Almacen.Presentacion.Frm_Rpt_Articulos.resources
 C:\Users\Rody\Desktop\Proyectos para github\C#\Sol_Almacen\Sol_Almacen.Presentacion\obj\Debug\Sol_Almacen.Presentacion.MDI_Principal.resources
 C:\Users\Rody\Desktop\Proyectos para github\C#\Sol_Almacen\Sol_Almacen.Presentacion\obj\Debug\Sol_Almacen.Presentacion.Frm_Categorias.resources
+C:\Users\Rody\Desktop\Proyectos para github\C#\Sol_Almacen\Sol_Almacen.Presentacion\obj\Debug\Sol_Almacen.Presentacion.Frm_Unidad_Medida.resources
