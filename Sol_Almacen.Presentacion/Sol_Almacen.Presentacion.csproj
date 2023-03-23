@@ -72,6 +72,25 @@
       <DependentUpon>DataSet_Datos.xsd</DependentUpon>
     </Compile>
     <Compile Include="D_Articulos.cs" />
+    <Compile Include="D_Categorias.cs" />
+    <Compile Include="Frm_Categorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Categorias.Designer.cs">
+      <DependentUpon>Frm_Categorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Unidad_Medida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Unidad_Medida.Designer.cs">
+      <DependentUpon>Frm_Unidad_Medida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDI_Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDI_Principal.Designer.cs">
+      <DependentUpon>MDI_Principal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_articulos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,7 +106,14 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="P_Articulos.cs" />
+    <Compile Include="P_Categorias.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Frm_Categorias.resx">
+      <DependentUpon>Frm_Categorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDI_Principal.resx">
+      <DependentUpon>MDI_Principal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_articulos.resx">
       <DependentUpon>Frm_articulos.cs</DependentUpon>
     </EmbeddedResource>
