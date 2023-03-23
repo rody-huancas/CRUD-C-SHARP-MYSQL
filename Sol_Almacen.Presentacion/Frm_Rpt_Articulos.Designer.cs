@@ -48,7 +48,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "Frm_Rpt_Articulos";
-            this.Text = "Frm_Rpt_Articulos";
+            this.Text = "REPORTE DE ARTÍCULOS";
             this.Load += new System.EventHandler(this.Frm_Rpt_Articulos_Load);
             this.ResumeLayout(false);
 

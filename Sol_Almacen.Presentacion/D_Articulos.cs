@@ -130,5 +130,59 @@ namespace Sol_Almacen.Presentacion
             return Rpta;
         }
 
+
+        public DataTable Listado_um()
+        {
+            MySqlDataReader Resultado;
+            DataTable Tabla = new DataTable();
+            MySqlConnection SqlCon = new MySqlConnection();
+            try
+            {
+                SqlCon = Conexion.getInstacia().CrearConexion();
+                string sql_tarea = "SELECT descripcion_um, codigo_um FROM tb_unidades_medida";
+                MySqlCommand Comando = new MySqlCommand(sql_tarea, SqlCon);
+                Comando.CommandTimeout = 60;
+                SqlCon.Open();
+                Resultado = Comando.ExecuteReader();
+                Tabla.Load(Resultado);
+
+                return Tabla;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+        }
+
+        public DataTable Listado_ca()
+        {
+            MySqlDataReader Resultado;
+            DataTable Tabla = new DataTable();
+            MySqlConnection SqlCon = new MySqlConnection();
+            try
+            {
+                SqlCon = Conexion.getInstacia().CrearConexion();
+                string sql_tarea = "SELECT descripcion_ca, codigo_ca FROM tb_categorias";
+                MySqlCommand Comando = new MySqlCommand(sql_tarea, SqlCon);
+                Comando.CommandTimeout = 60;
+                SqlCon.Open();
+                Resultado = Comando.ExecuteReader();
+                Tabla.Load(Resultado);
+
+                return Tabla;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+        }
     }
 }
